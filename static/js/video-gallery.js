@@ -123,12 +123,11 @@ const VideoGallery = (function() {
                 }
             });
 
-            // Update scene buttons - handle clones
+            // Update scene buttons
             if (track) {
                 const allButtons = track.querySelectorAll('.scene-button');
                 allButtons.forEach(btn => {
                     btn.classList.remove('is-primary');
-                    // Check against data-video-index since there are clones
                     if (parseInt(btn.dataset.videoIndex) === index) {
                         btn.classList.add('is-primary');
                     }
@@ -211,9 +210,9 @@ const VideoGallery = (function() {
 
     function initGallery(galleryButtonsId, galleryCarouselId, galleryType) {
         // Initialize carousel if it's the results gallery
-        if (galleryType === 'results') {
-             initCustomSlider();
-        }
+        // if (galleryType === 'results') {
+        //      initCustomSlider();
+        // }
 
         const container = document.getElementById(galleryCarouselId);
         if (!container) return;

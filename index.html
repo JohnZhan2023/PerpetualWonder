@@ -333,6 +333,25 @@
         width: 100%;
         height: auto;
     }
+
+    .results-grid-container {
+        width: 100%;
+        max-width: 1000px;
+        margin: 1rem auto;
+    }
+
+    .results-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.8rem;
+        width: 100%;
+    }
+
+    .results-grid .scene-button {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
 </style>
 
 <body>
@@ -353,11 +372,11 @@
                                 <a href="https://johnzhan2023.github.io/" target="_blank">Jiahao Zhan</a><sup>*</sup>,
                                 <a href="https://kyleleey.github.io/" target="_blank">Zizhang Li</a><sup>*</sup>,
                                 <a href="https://kovenyu.com/" target="_blank">Hong-Xing (Koven) Yu</a>,
-                                <a href="https://jiajunwu.com/" target="_blank">Jiajun Wu</a><sup>†</sup>
+                                <a href="https://jiajunwu.com/" target="_blank">Jiajun Wu</a>
                             </span>
                             <br>
                             <span class="author-block" style="font-size: 0.95rem; margin-top: 0.5rem;">
-                                <sup>*</sup>Equal contribution &nbsp;&nbsp; <sup>†</sup>Corresponding author
+                                <sup>*</sup>Equal contribution
                             </span>
                             <br>
                             <span class="author-block" style="font-size: 0.95rem; margin-top: 0.3rem;">
@@ -400,6 +419,165 @@
         </div>
     </section>
     <!--End teaser -->
+
+
+
+
+
+    <!-- Results -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-2">Long-Horizon Action-Conditioned 4D Scenes</h2>
+                
+                <figure class="image">
+                    <figcaption>
+                        PerpetualWonder generates 4D scenes from a single image and sequential input actions. 
+                        It predicts the physical consequences of the sequential input actions.
+                        Here, we present video results covering <strong>three rounds of interactions</strong> rendered with a moving camera from left to right, overlaid with action visualizations. 
+                    </figcaption>
+                </figure>
+
+                
+
+                <!-- Scene buttons grid -->
+                <div class="results-grid-container">
+                    <div class="results-grid" id="results-track">
+                        <button class="scene-button is-primary" data-video-index="0">
+                            <img src="assets/quality_result/cake.png" alt="Cake">
+                        </button>
+                        <button class="scene-button" data-video-index="1">
+                            <img src="assets/quality_result/castle.png" alt="Castle">
+                        </button>
+                        <button class="scene-button" data-video-index="2">
+                            <img src="assets/quality_result/flower.png" alt="Flower">
+                        </button>
+                        <button class="scene-button" data-video-index="3">
+                            <img src="assets/quality_result/tumbler.png" alt="Tumbler">
+                        </button>
+                        <button class="scene-button" data-video-index="4">
+                            <img src="assets/quality_result/apple.png" alt="Apple">
+                        </button>
+                        <button class="scene-button" data-video-index="5">
+                            <img src="assets/quality_result/tea_pot.png" alt="Tea Pot">
+                        </button>
+                        <button class="scene-button" data-video-index="6">
+                            <img src="assets/quality_result/clay.png" alt="Clay">
+                        </button>
+                        <button class="scene-button" data-video-index="7">
+                            <img src="assets/quality_result/play_doh.png" alt="Play Doh">
+                        </button>
+                        <button class="scene-button" data-video-index="8">
+                            <img src="assets/quality_result/doll.png" alt="Doll">
+                        </button>
+                        <button class="scene-button" data-video-index="9">
+                            <img src="assets/quality_result/tap.png" alt="Tap">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Video gallery carousel -->
+                <div class="video-gallery-carousel" id="gallery-carousel-results">
+
+                    <div class="video-gallery-item active">
+                        <div class="image-video-pair" style="justify-content: center;">
+                            <div class="video-container">
+                                <video preload="none" controls muted loop autoplay>
+                                    <source src="assets/quality_result/cake.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-gallery-item">
+                        <div class="image-video-pair" style="justify-content: center;">
+                            <div class="video-container">
+                                <video preload="none" controls muted loop>
+                                    <source data-src="assets/quality_result/castle.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-gallery-item">
+                        <div class="image-video-pair" style="justify-content: center;">
+                            <div class="video-container">
+                                <video preload="none" controls muted loop>
+                                    <source data-src="assets/quality_result/flower.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-gallery-item">
+                        <div class="image-video-pair" style="justify-content: center;">
+                            <div class="video-container">
+                                <video preload="none" controls muted loop>
+                                    <source data-src="assets/quality_result/tumbler.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-gallery-item">
+                        <div class="image-video-pair" style="justify-content: center;">
+                            <div class="video-container">
+                                <video preload="none" controls muted loop>
+                                    <source data-src="assets/quality_result/apple.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-gallery-item">
+                        <div class="image-video-pair" style="justify-content: center;">
+                            <div class="video-container">
+                                <video preload="none" controls muted loop>
+                                    <source data-src="assets/quality_result/tea_pot.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-gallery-item">
+                        <div class="image-video-pair" style="justify-content: center;">
+                            <div class="video-container">
+                                <video preload="none" controls muted loop>
+                                    <source data-src="assets/quality_result/clay.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-gallery-item">
+                        <div class="image-video-pair" style="justify-content: center;">
+                            <div class="video-container">
+                                <video preload="none" controls muted loop>
+                                    <source data-src="assets/quality_result/play_doh.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-gallery-item">
+                        <div class="image-video-pair" style="justify-content: center;">
+                            <div class="video-container">
+                                <video preload="none" controls muted loop>
+                                    <source data-src="assets/quality_result/doll.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-gallery-item">
+                        <div class="image-video-pair" style="justify-content: center;">
+                            <div class="video-container">
+                                <video preload="none" controls muted loop>
+                                    <source data-src="assets/quality_result/tap.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End More Results-->
+
 
     <!-- Comparisons -->
     <section class="hero is-small">
@@ -554,187 +732,6 @@
         </div>
     </section>
     <!--End Comparisons-->
-
-
-    <!-- Results -->
-    <section class="hero is-small">
-        <div class="hero-body">
-            <div class="container">
-                <h2 class="title is-2">Long-Horizon Action-Conditioned 4D Scenes</h2>
-                
-                <figure class="image">
-                    <figcaption>
-                        PerpetualWonder generates 4D scenes from a single image and sequential input actions. 
-                        It predicts the physical consequences of the sequential input actions.
-                        Here, we present video results covering <strong>three rounds of interactions</strong> rendered with a moving camera from left to right, overlaid with action visualizations. 
-                    </figcaption>
-                </figure>
-
-                
-
-                <!-- Scene buttons -->
-                <!-- Custom Slider Structure -->
-                <div class="custom-slider-container">
-                    <div class="slider-btn prev-btn">
-                        <i class="fas fa-chevron-left"></i>
-                    </div>
-                    
-                    <div class="slider-window">
-                        <div class="slider-track" id="results-track">
-                            <!-- Column 1 -->
-                            <div class="slider-column">
-                                <button class="scene-button is-primary" data-video-index="0">
-                                    <img src="assets/quality_result/cake.png" alt="Cake">
-                                </button>
-                                <button class="scene-button" data-video-index="1">
-                                    <img src="assets/quality_result/castle.png" alt="Castle">
-                                </button>
-                            </div>
-                            <!-- Column 2 -->
-                            <div class="slider-column">
-                                <button class="scene-button" data-video-index="2">
-                                    <img src="assets/quality_result/flower.png" alt="Flower">
-                                </button>
-                                <button class="scene-button" data-video-index="3">
-                                    <img src="assets/quality_result/tumbler.png" alt="Tumbler">
-                                </button>
-                            </div>
-                            <!-- Column 3 -->
-                            <div class="slider-column">
-                                <button class="scene-button" data-video-index="4">
-                                    <img src="assets/quality_result/apple.png" alt="Apple">
-                                </button>
-                                <button class="scene-button" data-video-index="5">
-                                    <img src="assets/quality_result/tea_pot.png" alt="Tea Pot">
-                                </button>
-                            </div>
-                            <!-- Column 4 -->
-                            <div class="slider-column">
-                                <button class="scene-button" data-video-index="6">
-                                    <img src="assets/quality_result/clay.png" alt="Clay">
-                                </button>
-                                <button class="scene-button" data-video-index="7">
-                                    <img src="assets/quality_result/play_doh.png" alt="Play Doh">
-                                </button>
-                            </div>
-                            <!-- Column 5 -->
-                            <div class="slider-column">
-                                <button class="scene-button" data-video-index="8">
-                                    <img src="assets/quality_result/doll.png" alt="Doll">
-                                </button>
-                                <button class="scene-button" data-video-index="9">
-                                    <img src="assets/quality_result/tap.png" alt="Tap">
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="slider-btn next-btn">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                </div>
-
-                <!-- Video gallery carousel -->
-                <div class="video-gallery-carousel" id="gallery-carousel-results">
-
-                    <div class="video-gallery-item active">
-                        <div class="image-video-pair" style="justify-content: center;">
-                            <div class="video-container">
-                                <video preload="none" controls muted loop autoplay>
-                                    <source src="assets/quality_result/cake.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="video-gallery-item">
-                        <div class="image-video-pair" style="justify-content: center;">
-                            <div class="video-container">
-                                <video preload="none" controls muted loop>
-                                    <source data-src="assets/quality_result/castle.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="video-gallery-item">
-                        <div class="image-video-pair" style="justify-content: center;">
-                            <div class="video-container">
-                                <video preload="none" controls muted loop>
-                                    <source data-src="assets/quality_result/flower.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="video-gallery-item">
-                        <div class="image-video-pair" style="justify-content: center;">
-                            <div class="video-container">
-                                <video preload="none" controls muted loop>
-                                    <source data-src="assets/quality_result/tumbler.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-gallery-item">
-                        <div class="image-video-pair" style="justify-content: center;">
-                            <div class="video-container">
-                                <video preload="none" controls muted loop>
-                                    <source data-src="assets/quality_result/apple.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-gallery-item">
-                        <div class="image-video-pair" style="justify-content: center;">
-                            <div class="video-container">
-                                <video preload="none" controls muted loop>
-                                    <source data-src="assets/quality_result/tea_pot.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-gallery-item">
-                        <div class="image-video-pair" style="justify-content: center;">
-                            <div class="video-container">
-                                <video preload="none" controls muted loop>
-                                    <source data-src="assets/quality_result/clay.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-gallery-item">
-                        <div class="image-video-pair" style="justify-content: center;">
-                            <div class="video-container">
-                                <video preload="none" controls muted loop>
-                                    <source data-src="assets/quality_result/play_doh.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-gallery-item">
-                        <div class="image-video-pair" style="justify-content: center;">
-                            <div class="video-container">
-                                <video preload="none" controls muted loop>
-                                    <source data-src="assets/quality_result/doll.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-gallery-item">
-                        <div class="image-video-pair" style="justify-content: center;">
-                            <div class="video-container">
-                                <video preload="none" controls muted loop>
-                                    <source data-src="assets/quality_result/tap.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End More Results-->
 
     <!-- Interactive Viewer -->
     <section class="hero is-small">

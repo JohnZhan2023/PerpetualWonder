@@ -1,0 +1,187 @@
+body {
+  font-family: "Mulish", sans-serif !important;
+}
+
+.footer .content p,
+.footer .content a {
+  font-size: 14px !important;
+}
+
+.footer .icon-link {
+  font-size: 25px;
+  color: #000;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.teaser .hero-body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: "Mulish", sans-serif;
+}
+
+.publication-banner {
+  max-height: parent;
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-title {
+  font-family: "Mulish", sans-serif;
+}
+
+.publication-authors {
+  font-family: "Mulish", sans-serif;
+}
+
+.publication-venue {
+  color: #555;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.publication-awards {
+  color: #ff3860;
+  width: fit-content;
+  font-weight: bolder;
+}
+
+.publication-authors a {
+  color: #07b5e0 !important;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.publication-authors p {
+  font-size: 1rem;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  border-radius: 10px !important;
+}
+
+.publication-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  padding: 20px;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+.slider-pagination .slider-page {
+  background: #000000;
+}
+
+.eql-cntrb {
+  font-size: smaller;
+}
+
+.toggle-handle {
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 0.2rem;
+  font-size: medium;
+  color: #0055AA;
+}
+
+.toggle-handle:hover {
+  text-decoration: underline;
+}
+
+.toggle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.video-gallery-buttons#gallery-buttons-diff-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Creates 2 columns with minimum width */
+  gap: 0.1rem; /* Space between buttons */
+  width: 100%;
+  max-width: 500px; /* Adjust this value to control overall width */
+  margin: 0 0 1rem 0; /* Centers the grid */
+  justify-content: center; /* Centers the grid horizontally */
+  align-items: stretch; /* Makes all buttons same height in each row */
+}
+
+.button.is-action-button {
+  min-width: 300px;  /* Set minimum width */
+  margin: 0.1rem;    /* Add some spacing between buttons */
+  white-space: normal; /* Allow text to wrap */
+  height: auto;      /* Allow height to adjust based on content */
+  padding: 1rem;     /* Add more padding */
+  width: 100%;       /* Makes button take full width of grid cell */
+}
+
+.button.is-action-button p {
+  font-size: 1rem;   /* Adjust font size as needed */
+  line-height: 1.4;  /* Improve readability */
+  text-align: left;  /* Align text to left */
+  margin: 0;         /* Remove default margins */
+}
+
+/* Add this if you need to center the entire section */
+.container .video-gallery-buttons#gallery-buttons-diff-actions {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BibTeX styles */
+.bibtex-container {
+  position: relative;
+}
+
+.bibtex-code-block {
+  margin: 0;
+  overflow-x: auto;
+  padding: 1.5rem;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.bibtex-code {
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}

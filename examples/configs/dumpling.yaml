@@ -1,0 +1,108 @@
+scene_name: dumpling
+work_dir: "3d_result/dumpling"
+data_path: "examples/imgs/dumpling"
+prompt: "dumpling on the table"
+seed: 99
+sub-gaussian: 0
+
+
+optimize_bg_dynamics: False
+
+
+rate: -0.6
+
+
+
+gen3c_config:
+  center_depth: 0.7
+  center_depth_y: 0.0
+  x_radius: 0.0
+  y_radius: 0.0
+  z_radius: 0.0
+  radius: 40
+  trajectory: "spin_right"
+  tilt_angle: 0.0
+  arc_scale: 0.3
+
+
+segment_config:
+  video_path: "3d_result/dumpling/merged_video.mp4"
+  points: [[776, 557], [865, 233]]
+
+simulator_config:
+
+  mesh_config:
+    voxel_length: 0.005
+    sdf_trunc_factor: 2.5
+    depth_trunc: 20.0
+    fill_holes: True
+  vis_frequency: 8
+  # dt: 7e-4 # you need change the dt when conducting different rounds
+  dt: 0.0005
+  # dt: 0.0007
+  substeps: 10
+  grid_density: 32
+  T: 392
+  camera_list: [121]
+  camera_pos: [-2.0, 0.0, 1.0]
+
+  simulation_entity_id: [0, 1]
+  
+  min_bound: [-1.000, -0.588, -0.288]
+  max_bound: [1.5, 1.681, 1.094]
+  bottom_threshold: 0
+  lift_height: 0
+  tilt_angle: 0
+  particle_size: 0.008
+  
+  entities:
+    - type: "dough"
+      enable_move: False
+      init_scale: 0.008
+      is_rigid_body: False
+
+    - type: "rolling pin"
+      enable_move: True
+      init_scale: 0.004
+      is_rigid_body: True
+
+video_config:
+  sdedit_strengths: [0.55, 0.65, 0.45]
+  output_folder: "3d_result/dumpling/go_with_flow"
+
+
+
+optimization_config:
+  num_inference_steps: 201
+  num_inference_steps_bg: 41
+  num_inference_steps_semi_round: 201
+  camera_list: [83, 121, 159]
+  video_with_flow: 3d_result/dumpling/go_with_flow
+  sam_prompt: [[[426, 352]], [[298, 660]], [[854, 352]]]
+
+  front_l1_loss_weight: 2
+  front_ssim_loss_weight: 2
+  other_l1_loss_weight: 0.5
+  other_ssim_loss_weight: 0.5
+  sim_loss_weight: 100
+
+  round_config:
+    - round: 1
+      sdedit_strength: [0.4, 0.55, 0.45]
+      num_inference_steps_bg: [0.4,  0.55,  0.45]
+      prompt: "A rolling pin without rotating falls on the dough on the table, and the dough is indented."
+    - round: 2
+      sdedit_strength: [0.55, 0.6, 0.45]
+      num_inference_steps_bg: [0.55,  0.6,  0.45]
+      prompt: "A light yellow wooden rolling pin presses and glides linearly over dough on a floured wooden surface, moved by an unseen force. Static background."
+
+    - round: 3
+      sdedit_strength: [0.55, 0.45, 0.55]
+      num_inference_steps_bg: [0.55,  0.45,  0.55]
+      prompt: "A rolling pin presses down on the dough. Rolling pin is in front of the glass."
+
+  wan_prompt: "A rolling pin falls on the dough on the table while camera moving left. The rolling pin presses forward on the dough while camera moving right. The rolling pin is pushed into the dough while camera moving right."
+
+
+
+

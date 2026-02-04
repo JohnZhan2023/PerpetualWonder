@@ -1,0 +1,14 @@
+rp
+diffusers
+einops
+easydict
+transformers
+accelerate
+sentencepiece
+peft
+opencv-contrib-python
+imageio-ffmpeg
+fire
+moviepy
+icecream
+matplotlib

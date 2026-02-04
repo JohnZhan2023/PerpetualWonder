@@ -1,0 +1,92 @@
+scene_name: jam_2
+work_dir: "3d_result/jam_2"
+data_path: "examples/imgs/jam_2"
+prompt: "redjam is pushed to the left on the table"
+seed: 23
+sub-gaussian: 0
+
+
+optimize_bg_dynamics: False
+rate: -0.95
+
+gen3c_config:
+  center_depth: 1.0
+  center_depth_y: 0.0
+  x_radius: 0.0
+  y_radius: 0.0
+  z_radius: 0.0
+  radius: 1.8
+  trajectory: "spin_right" # spin_left
+  tilt_angle: 0.0
+  arc_scale: 0.25
+
+
+segment_config:
+  video_path: "3d_result/jam_2/merged_video.mp4"
+  points: [[640, 352]]
+
+simulator_config:
+  vis_frequency: 8
+  mesh_config:
+    voxel_length: 0.01
+    sdf_trunc_factor: 2.0
+    depth_trunc: 20.0
+    fill_holes: True
+  min_bound: [-1.000, -1.088, -0.588]
+  max_bound: [1.5, 1.181, 1.1094]
+  lift_height: -0.23
+  tilt_angle: 10
+  camera_pos: [-2.0, 0.0, 1.0]
+  grid_density: 32
+  dt: 8e-4
+  substeps: 10
+  simulation_entity_id: [0]
+  T: 392
+  bottom_threshold: -0.30
+  camera_list: [83, 159]
+
+  particle_size: 0.005
+
+  entities:
+    - type: "jam"
+      is_rigid_body: False
+      enable_move: False
+      init_scale: 0.005
+
+video_config:
+  sdedit_strengths: [0.55]
+  output_folder: "3d_result/jam_2/go_with_flow"
+
+
+
+optimization_config:
+  num_inference_steps: 201
+  num_inference_steps_bg: 201
+  num_inference_steps_semi_round: 201
+  camera_list: [83, 121, 159]
+  video_with_flow: 3d_result/jam_2/go_with_flow
+  sam_prompt: [[[426, 352]], [[640, 452]], [[854, 352]]]
+
+  front_l1_loss_weight: 2
+  front_ssim_loss_weight: 2
+  other_l1_loss_weight: 0.5
+  other_ssim_loss_weight: 0.5
+  sim_loss_weight: 1000
+
+  round_config:
+    - round: 1
+      sdedit_strength: [0.55, 0.75, 0.55]
+      num_inference_steps_bg: [0.55,  0.75,  0.55]
+      prompt: "Jam spreading on the table"
+    - round: 2
+      sdedit_strength: [0.65, 0.65, 0.65]
+      num_inference_steps_bg: [0.65,  0.65,  0.65]
+      prompt: "jam is pushed to the left on the table"
+
+    - round: 3
+      sdedit_strength: [0.55, 0.55, 0.55]
+      num_inference_steps_bg: [0.55,  0.55,  0.55]
+      prompt: "red jam is pushed to the right on the table. less reflected light"
+
+
+

@@ -1,0 +1,102 @@
+scene_name: play_doh  
+work_dir: "3d_result/play_doh"
+data_path: "examples/imgs/play_doh"
+prompt: "A play doh"
+seed: 23
+sub-gaussian: 0
+
+optimize_bg_dynamics: False
+rate: 0.2
+
+
+gen3c_config:
+  center_depth: 1.0
+  center_depth_y: 0.00
+  x_radius: 1.0
+  y_radius: 0.05
+  z_radius: -0.3
+  radius: 30
+  trajectory: "spin_right"
+  tilt_angle: 0
+  arc_scale: 0.0
+
+
+segment_config:
+  video_path: "3d_result/play_doh/stage1_reconstruction/merged_video.mp4"
+  points: [[775, 396]]
+
+
+simulator_config:
+  vis_frequency: 8
+  mesh_config:
+    voxel_length: 0.01
+    sdf_trunc_factor: 8.0
+    depth_trunc: 20.0
+    fill_holes: True
+  min_bound: [7.5, 0.0, -2.0]
+  max_bound: [9.0, 1.5, 0.0]
+  lift_height: 0
+  tilt_angle: 0
+  camera_pos: [12, 1, -1.5]
+  grid_density: 32
+  dt: 1e-3
+  substeps: 10
+  simulation_entity_id: [0]
+  T: 392
+  bottom_threshold: -100.0
+  camera_list: [83, 159]
+
+  particle_size: 0.01
+
+  entities:
+    - type: "play_doh"
+      init_scale: 0.008
+      enable_move: False
+      is_rigid_body: False
+
+
+
+video_config:
+  sdedit_strengths: [0.55, 0.65]
+  output_folder: "3d_result/play_doh/stage3_optimization/go_with_flow"
+
+
+
+optimization_config:
+  num_inference_steps: 201
+  num_inference_steps_bg: 201
+  num_inference_steps_semi_round: 201
+  camera_list: [83, 121, 159]
+  video_with_flow: 3d_result/play_doh/stage3_optimization/go_with_flow
+  sam_prompt: [[[640, 692]], [[640, 692]], [[640, 692]]]
+
+  front_l1_loss_weight: 2
+  front_ssim_loss_weight: 2
+  other_l1_loss_weight: 0.5
+  other_ssim_loss_weight: 0.5
+  sim_loss_weight: 500
+
+  round_config:
+    - round: 1
+      sdedit_strength: [0.55, 0.55, 0.55]
+      bg_sdedit_strength: [0.55,  0.55,  0.55]
+      # sdedit_strength: [0.65, 0.75, 0.65]
+      # bg_sdedit_strength: [0.65,  0.75,  0.65]
+      prompt: "A play doh is pushed down on the table."
+    - round: 2
+      sdedit_strength: [0.65, 0.65, 0.55]
+      bg_sdedit_strength: [0.65,  0.65,  0.55]
+      prompt: "The modeling clay was pressed towards the lower-left."
+
+    - round: 3
+      sdedit_strength: [0.55, 0.65, 0.55]
+      bg_sdedit_strength: [0.55,  0.65,  0.55]
+      prompt: "The modeling clay was pressed right and spread."
+
+  wan_prompt: "A play doh is pushed to the left."
+
+
+
+
+
+

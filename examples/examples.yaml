@@ -1,0 +1,12 @@
+- name: jam
+  image_filepath: ../imgs/jam.png
+  style_prompt: DSLR 35mm landscape
+  content_prompt: A scene with jam dropping on the cake
+  negative_prompt: ""
+  background: ""
+- name: jam-2
+  image_filepath: ../imgs/jam-2.png
+  style_prompt: DSLR 35mm landscape
+  content_prompt: A scene with jam dropping on the cake
+  negative_prompt: ""
+  background: ""

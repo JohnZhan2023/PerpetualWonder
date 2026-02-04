@@ -1,0 +1,14 @@
+[submodule "submodules/GEN3C"]
+	path = submodules/GEN3C
+	url = https://github.com/JohnZhan2023/GEN3C.git
+	branch = main
+
+[submodule "submodules/sam2"]
+	path = submodules/sam2
+	url = https://github.com/facebookresearch/sam2.git
+	branch = main
+
+[submodule "submodules/simple_knn"]
+	path = submodules/simple_knn
+	url = https://github.com/shuyueW1991/simple_knn_illustration.git
+	branch = main

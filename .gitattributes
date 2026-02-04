@@ -1,0 +1,2 @@
+3d_result/* filter=lfs diff=lfs merge=lfs -text
+3d_result/** filter=lfs diff=lfs merge=lfs -text

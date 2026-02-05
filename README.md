@@ -7,8 +7,8 @@
 <div align="center">
 
 [![a](https://img.shields.io/badge/Website-PerpetualWonder-blue)](https://johnzhan2023.github.io/PerpetualWonder/)
-<!-- [![arXiv](https://img.shields.io/badge/arXiv-2406.09394-red)](https://arxiv.org/abs/2406.09394)
-[![twitter](https://img.shields.io/twitter/url?label=Koven_Yu&url=https%3A%2F%2Ftwitter.com%2FKoven_Yu)](https://x.com/Koven_Yu/status/1835769026934673595) -->
+[![arXiv](https://img.shields.io/badge/arXiv-2602.04876-red)](https://arxiv.org/abs/2602.04876)
+<!-- [![twitter](https://img.shields.io/twitter/url?label=Koven_Yu&url=https%3A%2F%2Ftwitter.com%2FKoven_Yu)](https://x.com/Koven_Yu/status/1835769026934673595) -->
 </div>
 
 
@@ -200,4 +200,19 @@ Our code references and builds upon the following open-source projects:
 - [simple_knn](https://github.com/shuyueW1991/simple_knn_illustration)
 
 We are grateful to the authors and contributors of these projects for their valuable work.
+
+
+## References
+
+```bibtex
+@misc{zhan2026perpetualwonderlonghorizonactionconditioned4d, 
+       title={PerpetualWonder: Long-Horizon Action-Conditioned 4D Scene Generation}, 
+       author={Jiahao Zhan and Zizhang Li and Hong-Xing Yu and Jiajun Wu}, 
+       year={2026}, 
+       eprint={2602.04876}, 
+       archivePrefix={arXiv}, 
+       primaryClass={cs.CV}, 
+       url={https://arxiv.org/abs/2602.04876},  
+}
+```
 
